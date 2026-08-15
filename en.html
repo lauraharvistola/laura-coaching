@@ -1,1 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Coach Laura Harvistola</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --cream: #f5f1ed;
+      --white: #fffdfb;
+      --beige: #eee5df;
+      --rose: #bd8578;
+      --rose-dark: #a96f63;
+      --brown: #67554e;
+      --text: #292522;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+
+    /* HEADER */
+
+    header {
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: rgba(255,253,251,.97);
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-top {
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: var(--rose);
+      margin-bottom: 1px;
+    }
+
+    .brand-name {
+      font-size: 19px;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 38px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      transition: .2s;
+    }
+
+    nav a:hover {
+      color: var(--rose);
+    }
+
+    .language {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .language a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .language a:hover {
+      color: var(--rose);
+    }
+
+
+    /* HERO */
+
+    .hero {
+      min-height: 670px;
+      display: grid;
+      grid-template-columns: 49% 51%;
+      background: var(--white);
+    }
+
+    .hero-content {
+      padding: 90px 10% 85px 12%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      color: var(--rose);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.1px;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 5vw, 76px);
+      font-weight: 300;
+      line-height: 1.04;
+      letter-spacing: -3px;
+    }
+
+    h1 span {
+      color: var(--rose);
+    }
+
+    .small-line {
+      width: 48px;
+      height: 2px;
+      background: var(--rose);
+      margin: 32px 0;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      font-size: 15px;
+      line-height: 1.85;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      width: fit-content;
+      text-decoration: none;
+      color: white;
+      background: var(--rose);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 6px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      transition: .25s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--rose-dark);
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      min-height: 670px;
+      background-image: url("kansikuva.jpeg");
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+    }
+
+
+    /* BENEFITS */
+
+    .benefits {
+      background: var(--beige);
+      padding: 34px 6%;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+    }
+
+    .benefit {
+      padding: 5px 28px;
+      border-right: 1px solid rgba(80,60,50,.12);
+    }
+
+    .benefit:last-child {
+      border-right: none;
+    }
+
+    .benefit-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 4px;
+    }
+
+    .benefit p {
+      font-size: 14px;
+      color: var(--brown);
+    }
+
+
+    /* COACHING */
+
+    .coaching {
+      padding: 90px 6% 110px;
+      background: var(--cream);
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      color: var(--rose);
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(32px,3vw,44px);
+      font-weight: 300;
+      letter-spacing: -1.5px;
+      line-height: 1.2;
+    }
+
+    .cards {
+      max-width: 1280px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(50,35,30,.07);
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-image {
+      height: 280px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .training-image {
+      background-image: url("treenivalmennus.jpeg");
+      background-position: center 32%;
+    }
+
+    .nutrition-image {
+      background-image: url("ravintovalmennus.jpeg");
+      background-position: center center;
+    }
+
+    .monthly-image {
+      background-image: url("kuukausivalmennus.jpeg");
+      background-position: 60% 55%;
+    }
+
+    .card-content {
+      padding: 28px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--brown);
+      font-size: 13px;
+      min-height: 82px;
+    }
+
+    .price {
+      margin-top: 18px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 18px;
+      text-decoration: none;
+      color: var(--rose);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .read-more:hover {
+      color: var(--rose-dark);
+    }
+
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 45% 55%;
+      min-height: 600px;
+      background: var(--beige);
+    }
+
+    .about-image {
+      background-image: url("Esittely.png");
+      background-size: cover;
+      background-position: center 15%;
+      min-height: 600px;
+    }
+
+    .about-content {
+      padding: 90px 12%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-content p {
+      max-width: 600px;
+      margin: 24px 0 30px;
+      color: var(--brown);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+      padding: 100px 6% 110px;
+      background: var(--white);
+    }
+
+    .contact-container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .contact-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .contact-heading p {
+      max-width: 680px;
+      margin: 20px auto 0;
+      color: var(--brown);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .contact-heading a {
+      color: var(--rose-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-heading a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-form {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 45px;
+      background: var(--cream);
+      border-radius: 14px;
+      box-shadow: 0 10px 35px rgba(50,35,30,.05);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #d8cec8;
+      border-radius: 6px;
+      outline: none;
+      background: var(--white);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 2px rgba(189,133,120,.08);
+    }
+
+    .form-group textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      background: var(--text);
+      color: #eee6e1;
+      text-align: center;
+      padding: 35px;
+      font-size: 11px;
+      letter-spacing: .8px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      header {
+        height: 80px;
+        padding: 0 6%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .brand-top {
+        font-size: 8px;
+      }
+
+      .brand-name {
+        font-size: 15px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        padding: 70px 7%;
+      }
+
+      .hero-image {
+        min-height: 520px;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 25px;
+      }
+
+      .benefit:nth-child(2) {
+        border-right: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card-image {
+        height: 360px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 580px;
+      }
+
+      .about-content {
+        padding: 70px 8%;
+      }
+
+      .contact {
+        padding: 75px 6%;
+      }
+
+      .contact-form {
+        padding: 30px 22px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+  <a class="brand" href="en.html">
+    <span class="brand-top">COACH</span>
+    <span class="brand-name">Laura Harvistola</span>
+  </a>
+
+  <nav>
+    <a href="en.html">HOME</a>
+    <a href="coaching.html">COACHING</a>
+    <a href="#about">ABOUT ME</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <div class="language">
+    <a href="index.html">FI</a>
+    &nbsp;|&nbsp;
+    <a href="en.html">EN</a>
+  </div>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      ONLINE COACHING &nbsp;•&nbsp; TRAINING &nbsp;•&nbsp; NUTRITION
+    </div>
+
+    <h1>
+      Strong looks<br>
+      different on<br>
+      <span>everyone.</span>
+    </h1>
+
+    <div class="small-line"></div>
+
+    <p class="hero-text">
+      Your goal may be fat loss, building muscle, improving your nutrition
+      or making a lasting lifestyle change.
+      My goal is to help you create results that last.
+    </p>
+
+    <a class="btn" href="coaching.html">
+      EXPLORE COACHING &nbsp; →
+    </a>
+
+  </div>
+
+  <div class="hero-image"></div>
+
+</section>
+
+
+<section class="benefits">
+
+  <div class="benefit">
+    <div class="benefit-title">TRAINING</div>
+    <p>A personalised training plan with your progress reviewed every week.</p>
+  </div>
+
+  <div class="benefit">
+    <div class="benefit-title">NUTRITION</div>
+    <p>A flexible and practical nutrition plan that supports your goals and fits your lifestyle.</p>
+  </div>
+
+  <div class="benefit">
+    <div class="benefit-title">SUPPORT</div>
+    <p>You're not doing this alone – you'll receive ongoing support, feedback and guidance throughout your journey.</p>
+  </div>
+
+  <div class="benefit">
+    <div class="benefit-title">RESULTS</div>
+    <p>Change you can see, feel and maintain. You'll gain tools that work in your everyday life.</p>
+  </div>
+
+</section>
+
+
+<section class="coaching" id="coaching">
+
+  <div class="section-head">
+
+    <div class="section-label">
+      COACHING
+    </div>
+
+    <h2>
+      Choose your path
+    </h2>
+
+  </div>
+
+
+  <div class="cards">
+
+
+    <!-- ONLINE COACHING -->
+
+    <div class="card">
+
+      <div class="card-image monthly-image"></div>
+
+      <div class="card-content">
+
+        <h3>Online Coaching</h3>
+
+        <p>
+          Training, nutrition and progress tracking in one complete package.
+          Weekly check-ins and ongoing support.
+        </p>
+
+        <div class="price">
+          149 € / month
+        </div>
+
+        <a
+          class="read-more"
+          href="coaching.html#online-coaching"
+        >
+          LEARN MORE &nbsp; →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- NUTRITION COACHING -->
+
+    <div class="card">
+
+      <div class="card-image nutrition-image"></div>
+
+      <div class="card-content">
+
+        <h3>Online Nutrition Coaching</h3>
+
+        <p>
+          A personalised nutrition plan designed to support your goals
+          while still fitting into real life.
+        </p>
+
+        <div class="price">
+          119 € / month
+        </div>
+
+        <a
+          class="read-more"
+          href="coaching.html#nutrition-coaching"
+        >
+          LEARN MORE &nbsp; →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- TRAINING COACHING -->
+
+    <div class="card">
+
+      <div class="card-image training-image"></div>
+
+      <div class="card-content">
+
+        <h3>Online Training Coaching</h3>
+
+        <p>
+          A personalised training programme built around your goals,
+          with progress tracking and ongoing coaching support.
+        </p>
+
+        <div class="price">
+          119 € / month
+        </div>
+
+        <a
+          class="read-more"
+          href="coaching.html#training-coaching"
+        >
+          LEARN MORE &nbsp; →
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<section class="about" id="about">
+
+  <div class="about-image"></div>
+
+  <div class="about-content">
+
+    <div class="section-label">
+      YOUR COACH
+    </div>
+
+    <h2>
+      Laura Harvistola
+    </h2>
+
+    <p>
+
+      My goal is not only to help you achieve results, but also to teach you
+      the skills and habits you need to continue using what you've learned
+      independently after coaching. I want to help you make changes that
+      genuinely last – without endless restriction, burning yourself out
+      or taking things to extremes.
+
+      <br><br>
+
+      I have been coaching since 2022. I am a certified international
+      Personal Trainer (Intensive PT), a Gym and Strength Coach
+      (Spartan Academy), and I have also studied nutritional sciences
+      at the University of Helsinki.
+
+      <br><br>
+
+      My interest in learning more about training and nutrition began in
+      2018 when I started my first fitness coaching programme.
+      I competed in Bikini Fitness from 2019 to 2025.
+      For now, I have left competing behind, and these days training is
+      still a big part of my life, balanced with everyday life and time
+      spent with my husband and our little dog.
+
+      <br><br>
+
+      As a coach, I am supportive but I will also challenge you when needed.
+      Change always requires change, but it doesn't have to mean giving up
+      everything you enjoy, following endless lists of restrictions or
+      pushing yourself to exhaustion. I will give you the tools you need
+      to succeed and support you throughout the process.
+      My coaching services are suitable for all training levels.
+      Get in touch and let's talk about your goals!
+
+      <br><br>
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+  <div class="contact-container">
+
+    <div class="contact-heading">
+
+      <div class="section-label">
+        GET IN TOUCH
+      </div>
+
+      <h2>
+        Are you ready to get started?
+      </h2>
+
+      <p>
+        Do you have questions about coaching or would you like to talk about
+        which option would be the best fit for you?
+        Fill in the contact form below or email me directly at
+        <a href="mailto:laura.harvistola@gmail.com">
+          laura.harvistola@gmail.com
+        </a>.
+        I'll get back to you within 1–3 business days.
+      </p>
+
+    </div>
+
+
+    <!-- NETLIFY FORM -->
+
+    <form
+      class="contact-form"
+      name="contact-en"
+      method="POST"
+      action="/en.html"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+
+      <input
+        type="hidden"
+        name="form-name"
+        value="contact-en"
+      >
+
+      <p hidden>
+        <label>
+          Don't fill this out:
+          <input name="bot-field">
+        </label>
+      </p>
+
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label for="first-name">
+            FIRST NAME
+          </label>
+
+          <input
+            type="text"
+            id="first-name"
+            name="first-name"
+            autocomplete="given-name"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="last-name">
+            LAST NAME
+          </label>
+
+          <input
+            type="text"
+            id="last-name"
+            name="last-name"
+            autocomplete="family-name"
+            required
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="email-en">
+          EMAIL ADDRESS
+        </label>
+
+        <input
+          type="email"
+          id="email-en"
+          name="email"
+          autocomplete="email"
+          required
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="reason">
+          REASON FOR CONTACT
+        </label>
+
+        <select
+          id="reason"
+          name="reason-for-contact"
+          required
+        >
+
+          <option value="" disabled selected>
+            Select an option
+          </option>
+
+          <option value="Fat loss">
+            Fat loss
+          </option>
+
+          <option value="Building muscle">
+            Building muscle
+          </option>
+
+          <option value="Nutrition">
+            Nutrition
+          </option>
+
+          <option value="Lifestyle change">
+            Lifestyle change
+          </option>
+
+          <option value="Other">
+            Other
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="message">
+          MESSAGE
+        </label>
+
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Write your message here..."
+          required
+        ></textarea>
+
+      </div>
+
+
+      <div class="form-submit">
+
+        <button
+          class="btn"
+          type="submit"
+        >
+          SEND MESSAGE &nbsp; →
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<footer>
+  © 2026 Laura Harvistola
+</footer>
+
+
+</body>
+
+</html>
