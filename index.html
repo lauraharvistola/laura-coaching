@@ -361,11 +361,11 @@
     }
 
     .contact-heading p {
-      max-width: 650px;
+      max-width: 680px;
       margin: 20px auto 0;
       color: var(--brown);
       font-size: 14px;
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
     .contact-heading a {
@@ -381,9 +381,10 @@
     .contact-form {
       max-width: 760px;
       margin: 0 auto;
-      background: var(--cream);
       padding: 45px;
+      background: var(--cream);
       border-radius: 14px;
+      box-shadow: 0 10px 35px rgba(50,35,30,.05);
     }
 
     .form-row {
@@ -399,24 +400,24 @@
     .form-group label {
       display: block;
       margin-bottom: 8px;
+      color: var(--text);
       font-size: 11px;
       font-weight: 500;
       letter-spacing: .8px;
-      color: var(--text);
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
+      padding: 14px 15px;
       border: 1px solid #d8cec8;
+      border-radius: 6px;
+      outline: none;
       background: var(--white);
       color: var(--text);
-      border-radius: 6px;
-      padding: 14px 15px;
       font-family: "DM Sans", sans-serif;
       font-size: 14px;
-      outline: none;
       transition: .2s;
     }
 
@@ -428,7 +429,7 @@
     }
 
     .form-group textarea {
-      min-height: 150px;
+      min-height: 160px;
       resize: vertical;
     }
 
@@ -633,7 +634,6 @@
 
   <div class="cards">
 
-
     <div class="card">
 
       <div class="card-image training-image"></div>
@@ -711,7 +711,6 @@
 
     </div>
 
-
   </div>
 
 </section>
@@ -781,17 +780,26 @@
     </div>
 
 
+    <!-- NETLIFY FORM -->
+
     <form
       class="contact-form"
       name="yhteydenotto"
       method="POST"
+      action="/"
       data-netlify="true"
       netlify-honeypot="bot-field"
     >
 
-      <input type="hidden" name="form-name" value="yhteydenotto">
+      <!-- Netlify tunnistaa lomakkeen tästä -->
+      <input
+        type="hidden"
+        name="form-name"
+        value="yhteydenotto"
+      >
 
-      <p style="display:none;">
+      <!-- Roskapostisuoja -->
+      <p hidden>
         <label>
           Älä täytä tätä kenttää:
           <input name="bot-field">
@@ -802,7 +810,11 @@
       <div class="form-row">
 
         <div class="form-group">
-          <label for="etunimi">ETUNIMI</label>
+
+          <label for="etunimi">
+            ETUNIMI
+          </label>
+
           <input
             type="text"
             id="etunimi"
@@ -810,10 +822,16 @@
             autocomplete="given-name"
             required
           >
+
         </div>
 
+
         <div class="form-group">
-          <label for="sukunimi">SUKUNIMI</label>
+
+          <label for="sukunimi">
+            SUKUNIMI
+          </label>
+
           <input
             type="text"
             id="sukunimi"
@@ -821,6 +839,7 @@
             autocomplete="family-name"
             required
           >
+
         </div>
 
       </div>
@@ -849,7 +868,11 @@
           YHTEYDENOTON SYY
         </label>
 
-        <select id="syy" name="yhteydenoton-syy" required>
+        <select
+          id="syy"
+          name="yhteydenoton-syy"
+          required
+        >
 
           <option value="" disabled selected>
             Valitse vaihtoehto
@@ -898,7 +921,10 @@
 
       <div class="form-submit">
 
-        <button class="btn" type="submit">
+        <button
+          class="btn"
+          type="submit"
+        >
           LÄHETÄ VIESTI &nbsp; →
         </button>
 
@@ -917,4 +943,5 @@
 
 
 </body>
+
 </html>
