@@ -156,12 +156,15 @@
       text-decoration: none;
       color: white;
       background: var(--rose);
+      border: none;
       padding: 15px 30px;
       border-radius: 6px;
+      font-family: "DM Sans", sans-serif;
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 1.2px;
       transition: .25s;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -343,15 +346,96 @@
     /* CONTACT */
 
     .contact {
-      padding: 100px 6%;
-      text-align: center;
+      padding: 100px 6% 110px;
       background: var(--white);
     }
 
-    .contact p {
-      max-width: 570px;
-      margin: 20px auto 30px;
+    .contact-container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .contact-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .contact-heading p {
+      max-width: 650px;
+      margin: 20px auto 0;
       color: var(--brown);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .contact-heading a {
+      color: var(--rose-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-heading a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-form {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--cream);
+      padding: 45px;
+      border-radius: 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .8px;
+      color: var(--text);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid #d8cec8;
+      background: var(--white);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 14px 15px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: .2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 2px rgba(189,133,120,.08);
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
     }
 
 
@@ -427,6 +511,19 @@
 
       .about-content {
         padding: 70px 8%;
+      }
+
+      .contact {
+        padding: 75px 6%;
+      }
+
+      .contact-form {
+        padding: 30px 22px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
       }
 
     }
@@ -658,22 +755,158 @@
 
 <section class="contact" id="yhteystiedot">
 
-  <div class="section-label">
-    OTA YHTEYTTÄ
+  <div class="contact-container">
+
+    <div class="contact-heading">
+
+      <div class="section-label">
+        OTA YHTEYTTÄ
+      </div>
+
+      <h2>
+        Aloitetaanko yhdessä?
+      </h2>
+
+      <p>
+        Onko sinulla kysyttävää valmennuksista tai haluaisitko jutella siitä,
+        mikä vaihtoehto sopisi juuri sinulle?
+        Täytä alla oleva yhteydenottolomake tai laita minulle viestiä
+        suoraan sähköpostitse
+        <a href="mailto:laura.harvistola@gmail.com">
+          laura.harvistola@gmail.com
+        </a>.
+        Vastaan sinulle mahdollisimman pian.
+      </p>
+
+    </div>
+
+
+    <form
+      class="contact-form"
+      name="yhteydenotto"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+
+      <input type="hidden" name="form-name" value="yhteydenotto">
+
+      <p style="display:none;">
+        <label>
+          Älä täytä tätä kenttää:
+          <input name="bot-field">
+        </label>
+      </p>
+
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label for="etunimi">ETUNIMI</label>
+          <input
+            type="text"
+            id="etunimi"
+            name="etunimi"
+            autocomplete="given-name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="sukunimi">SUKUNIMI</label>
+          <input
+            type="text"
+            id="sukunimi"
+            name="sukunimi"
+            autocomplete="family-name"
+            required
+          >
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="email">
+          SÄHKÖPOSTIOSOITE
+        </label>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          autocomplete="email"
+          required
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="syy">
+          YHTEYDENOTON SYY
+        </label>
+
+        <select id="syy" name="yhteydenoton-syy" required>
+
+          <option value="" disabled selected>
+            Valitse vaihtoehto
+          </option>
+
+          <option value="Painonpudotus">
+            Painonpudotus
+          </option>
+
+          <option value="Lihasmassan kasvatus">
+            Lihasmassan kasvatus
+          </option>
+
+          <option value="Ravinto">
+            Ravinto
+          </option>
+
+          <option value="Elämäntapamuutos">
+            Elämäntapamuutos
+          </option>
+
+          <option value="Muu">
+            Muu
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="viesti">
+          VIESTI
+        </label>
+
+        <textarea
+          id="viesti"
+          name="viesti"
+          placeholder="Kirjoita viestisi tähän..."
+          required
+        ></textarea>
+
+      </div>
+
+
+      <div class="form-submit">
+
+        <button class="btn" type="submit">
+          LÄHETÄ VIESTI &nbsp; →
+        </button>
+
+      </div>
+
+    </form>
+
   </div>
-
-  <h2>
-    Aloitetaanko yhdessä?
-  </h2>
-
-  <p>
-    Jos haluat kuulla lisää valmennuksesta tai et ole varma,
-    mikä vaihtoehto sopisi juuri sinulle, ota rohkeasti yhteyttä.
-  </p>
-
-  <a class="btn" href="#">
-    OTA YHTEYTTÄ &nbsp; →
-  </a>
 
 </section>
 
