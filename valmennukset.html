@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Valmennukset | Laura Harvistola</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --cream: #f5f1ed;
+      --white: #fffdfb;
+      --beige: #eee5df;
+      --rose: #bd8578;
+      --rose-dark: #a96f63;
+      --brown: #67554e;
+      --text: #292522;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+
+    /* HEADER */
+
+    header {
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: rgba(255,253,251,.97);
+      position: relative;
+      z-index: 10;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-top {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--rose);
+      margin-bottom: 1px;
+    }
+
+    .brand-name {
+      font-size: 19px;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 38px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      transition: .2s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--rose);
+    }
+
+    .language {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+
+    /* PAGE HERO */
+
+    .page-hero {
+      padding: 105px 6% 95px;
+      text-align: center;
+      background: var(--white);
+    }
+
+    .section-label {
+      color: var(--rose);
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 5vw, 70px);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -2.5px;
+      margin-bottom: 25px;
+    }
+
+    .page-hero p {
+      max-width: 690px;
+      margin: 0 auto;
+      color: var(--brown);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .small-line {
+      width: 48px;
+      height: 2px;
+      background: var(--rose);
+      margin: 30px auto;
+    }
+
+
+    /* COACHING SECTIONS */
+
+    .coaching-block {
+      display: grid;
+      grid-template-columns: 48% 52%;
+      min-height: 680px;
+      scroll-margin-top: 30px;
+    }
+
+    .coaching-block.reverse {
+      grid-template-columns: 52% 48%;
+    }
+
+    .coaching-image {
+      min-height: 680px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .monthly-image {
+      background-image: url("kuukausivalmennus.jpeg");
+      background-position: 60% 55%;
+    }
+
+    .training-image {
+      background-image: url("treenivalmennus.jpeg");
+      background-position: center 32%;
+    }
+
+    .nutrition-image {
+      background-image: url("ravintovalmennus.jpeg");
+      background-position: center center;
+    }
+
+    .coaching-content {
+      padding: 80px 11%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--cream);
+    }
+
+    .reverse .coaching-content {
+      background: var(--beige);
+    }
+
+    .reverse .coaching-image {
+      order: 2;
+    }
+
+    .reverse .coaching-content {
+      order: 1;
+    }
+
+    .coaching-number {
+      color: var(--rose);
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      margin-bottom: 13px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 3vw, 44px);
+      font-weight: 300;
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+    }
+
+    .price {
+      margin: 15px 0 26px;
+      color: var(--rose-dark);
+      font-size: 19px;
+      font-weight: 500;
+    }
+
+    .intro {
+      max-width: 620px;
+      color: var(--brown);
+      font-size: 14px;
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .includes-title {
+      margin-top: 14px;
+      margin-bottom: 13px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+    }
+
+    .includes {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .includes li {
+      position: relative;
+      padding: 6px 0 6px 22px;
+      color: var(--brown);
+      font-size: 13px;
+    }
+
+    .includes li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      color: var(--rose);
+      font-size: 18px;
+    }
+
+    .note {
+      max-width: 620px;
+      padding: 17px 19px;
+      margin: 4px 0 27px;
+      background: rgba(255,253,251,.65);
+      border-left: 2px solid var(--rose);
+      color: var(--brown);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .btn {
+      display: inline-block;
+      width: fit-content;
+      text-decoration: none;
+      color: white;
+      background: var(--rose);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 6px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      transition: .25s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--rose-dark);
+      transform: translateY(-2px);
+    }
+
+
+    /* BOTTOM CTA */
+
+    .bottom-cta {
+      padding: 100px 6%;
+      text-align: center;
+      background: var(--white);
+    }
+
+    .bottom-cta h2 {
+      margin-bottom: 20px;
+    }
+
+    .bottom-cta p {
+      max-width: 620px;
+      margin: 0 auto 30px;
+      color: var(--brown);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      background: var(--text);
+      color: #eee6e1;
+      text-align: center;
+      padding: 35px;
+      font-size: 11px;
+      letter-spacing: .8px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      header {
+        height: 80px;
+        padding: 0 6%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .brand-top {
+        font-size: 8px;
+      }
+
+      .brand-name {
+        font-size: 15px;
+      }
+
+      .page-hero {
+        padding: 75px 7% 70px;
+      }
+
+      .coaching-block,
+      .coaching-block.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .coaching-image,
+      .reverse .coaching-image {
+        min-height: 520px;
+        order: 1;
+      }
+
+      .coaching-content,
+      .reverse .coaching-content {
+        padding: 65px 8%;
+        order: 2;
+      }
+
+      .monthly-image {
+        background-position: 60% 55%;
+      }
+
+      .training-image {
+        background-position: center 32%;
+      }
+
+      .bottom-cta {
+        padding: 75px 8%;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+  <a class="brand" href="index.html">
+    <span class="brand-top">VALMENTAJA</span>
+    <span class="brand-name">Laura Harvistola</span>
+  </a>
+
+  <nav>
+    <a href="index.html">ETUSIVU</a>
+    <a class="active" href="valmennukset.html">VALMENNUKSET</a>
+    <a href="index.html#minusta">MINUSTA</a>
+    <a href="index.html#yhteystiedot">YHTEYSTIEDOT</a>
+  </nav>
+
+  <div class="language">
+    FI &nbsp;|&nbsp; EN
+  </div>
+
+</header>
+
+
+<section class="page-hero">
+
+  <div class="section-label">
+    ONLINE VALMENNUKSET
+  </div>
+
+  <h1>
+    Valmennus sinun tavoitteidesi tueksi
+  </h1>
+
+  <div class="small-line"></div>
+
+  <p>
+    Jokainen lähtötilanne ja tavoite on erilainen.
+    Valitse kokonaisuus sen mukaan, kaipaatko tukea treeniin,
+    ravintoon vai molempiin. Kaikissa valmennuksissa etenemistäsi
+    seurataan säännöllisesti ja valmennusta muokataan tarpeidesi mukaan.
+  </p>
+
+</section>
+
+
+
+<!-- KUUKAUSIVALMENNUS -->
+
+<section
+  class="coaching-block"
+  id="kuukausivalmennus"
+>
+
+  <div class="coaching-image monthly-image"></div>
+
+  <div class="coaching-content">
+
+    <div class="coaching-number">
+      KOKONAISVALTAINEN VALMENNUS
+    </div>
+
+    <h2>
+      Online kuukausivalmennus
+    </h2>
+
+    <div class="price">
+      149 € / kk
+    </div>
+
+    <p class="intro">
+      Kuukausivalmennus on sinulle, joka haluat kokonaisvaltaista
+      tukea tavoitteidesi saavuttamiseen. Saat juuri sinulle suunnitellun
+      treeni- ja ravinto-ohjelman sekä valmentajan tuen koko matkan ajaksi.
+    </p>
+
+    <p class="intro">
+      Valmennuksessa et jää yksin ohjelmien kanssa. Seuraamme etenemistäsi
+      viikoittain, käymme läpi treenien ja ravinnon toteutumista ja asetamme
+      yhdessä tavoitteet seuraavalle viikolle. Näin tiedämme, mikä toimii
+      ja missä tarvitsemme muutoksia.
+    </p>
+
+    <p class="intro">
+      Treeni- ja ravinto-ohjelmasi eivät ole kiveen hakattuja.
+      Niitä muokataan valmennuksen aikana tarpeen, kehityksen
+      ja elämäntilanteesi mukaan.
+    </p>
+
+    <div class="includes-title">
+      VALMENNUKSEEN KUULUU
+    </div>
+
+    <ul class="includes">
+      <li>Henkilökohtaisesti suunniteltu treeniohjelma</li>
+      <li>Henkilökohtaisesti suunniteltu ravinto-ohjelma</li>
+      <li>Valmentajan jatkuva tuki</li>
+      <li>Viikoittainen raportointi ja seuranta</li>
+      <li>Yhteiset tavoitteet jokaiselle uudelle viikolle</li>
+      <li>Treeni- ja ravinto-ohjelmien päivitykset tarpeen mukaan</li>
+      <li>Valmennuksen minimikesto 3 kk</li>
+    </ul>
+
+    <div class="note">
+      Tavoitteena ei ole täydellinen suorittaminen, vaan löytää juuri
+      sinulle toimiva tapa edetä kohti tavoitteitasi ja rakentaa samalla
+      tapoja, joita pystyt ylläpitämään myös pitkällä aikavälillä.
+    </div>
+
+    <a class="btn" href="index.html#yhteystiedot">
+      OTA YHTEYTTÄ &nbsp; →
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- TREENIVALMENNUS -->
+
+<section
+  class="coaching-block reverse"
+  id="treenivalmennus"
+>
+
+  <div class="coaching-image training-image"></div>
+
+  <div class="coaching-content">
+
+    <div class="coaching-number">
+      TAVOITTEELLINEN HARJOITTELU
+    </div>
+
+    <h2>
+      Online treenivalmennus
+    </h2>
+
+    <div class="price">
+      119 € / kk
+    </div>
+
+    <p class="intro">
+      Online treenivalmennus sopii sinulle, kun haluat tavoitteellista
+      ja suunnitelmallista treeniä sekä valmentajan tuen kehityksesi
+      seuraamiseen, mutta et tarvitse erillistä ravinto-ohjelmaa.
+    </p>
+
+    <p class="intro">
+      Saat henkilökohtaisesti sinulle ja tavoitteidesi mukaan suunnitellun
+      treeniohjelman, jonka etenemistä seuraamme yhdessä viikoittain.
+      Viikkoraportoinnin yhteydessä käymme läpi kuluneen viikon treenit,
+      kehityksen ja mahdolliset haasteet sekä asetamme tavoitteet
+      seuraavalle viikolle.
+    </p>
+
+    <p class="intro">
+      Ohjelma elää kehityksesi mukana. Treeniohjelmaa päivitetään ja
+      muokataan tarpeen mukaan, jotta harjoittelu pysyy nousujohteisena
+      ja tukee tavoitettasi myös pidemmällä aikavälillä.
+    </p>
+
+    <div class="includes-title">
+      VALMENNUKSEEN KUULUU
+    </div>
+
+    <ul class="includes">
+      <li>Henkilökohtaisesti suunniteltu treeniohjelma</li>
+      <li>Valmentajan jatkuva tuki</li>
+      <li>Viikoittainen raportointi ja seuranta</li>
+      <li>Yhteiset tavoitteet jokaiselle uudelle viikolle</li>
+      <li>Treeniohjelman päivitykset ja muutokset tarpeen mukaan</li>
+      <li>Valmennuksen minimikesto 3 kk</li>
+    </ul>
+
+    <div class="note">
+      Ravinto-ohjelma ei kuulu Online treenivalmennukseen.
+      Jos haluat sekä treenin että ravinnon osaksi valmennustasi,
+      Online kuukausivalmennus on sinulle sopivampi kokonaisuus.
+    </div>
+
+    <a class="btn" href="index.html#yhteystiedot">
+      OTA YHTEYTTÄ &nbsp; →
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- RAVINTOVALMENNUS -->
+
+<section
+  class="coaching-block"
+  id="ravintovalmennus"
+>
+
+  <div class="coaching-image nutrition-image"></div>
+
+  <div class="coaching-content">
+
+    <div class="coaching-number">
+      RAVINTO
+    </div>
+
+    <h2>
+      Online ravintovalmennus
+    </h2>
+
+    <div class="price">
+      119 € / kk
+    </div>
+
+    <p class="intro">
+      Online ravintovalmennus sopii sinulle, kun haluat kehittää
+      ravitsemustasi tavoitteellisesti ja löytää juuri sinulle toimivan
+      tavan syödä, mutta et tarvitse erillistä treeniohjelmaa.
+    </p>
+
+    <p class="intro">
+      Saat henkilökohtaisesti sinulle ja tavoitteidesi mukaan suunnitellun
+      ravinto-ohjelman, jonka toteutumista ja etenemistä seuraamme yhdessä
+      viikoittain. Viikkoraportoinnin yhteydessä käymme läpi kuluneen viikon,
+      mahdolliset haasteet ja onnistumiset sekä asetamme yhdessä tavoitteet
+      seuraavalle viikolle.
+    </p>
+
+    <p class="intro">
+      Ravinto-ohjelma ei ole kiveen hakattu, vaan sitä päivitetään ja
+      muokataan valmennuksen aikana tarpeidesi, kehityksesi ja
+      elämäntilanteesi mukaan. Tarkoituksena on rakentaa toimiva kokonaisuus,
+      joka tukee tavoitteitasi mutta sopii samalla oikeaan elämään.
+    </p>
+
+    <div class="includes-title">
+      VALMENNUKSEEN KUULUU
+    </div>
+
+    <ul class="includes">
+      <li>Henkilökohtaisesti suunniteltu ravinto-ohjelma</li>
+      <li>Valmentajan jatkuva tuki</li>
+      <li>Viikoittainen raportointi ja seuranta</li>
+      <li>Yhteiset tavoitteet jokaiselle uudelle viikolle</li>
+      <li>Ravinto-ohjelman päivitykset ja muutokset tarpeen mukaan</li>
+      <li>Valmennuksen minimikesto 3 kk</li>
+    </ul>
+
+    <div class="note">
+      Treeniohjelma ei kuulu Online ravintovalmennukseen.
+      Jos haluat sekä treenin että ravinnon osaksi valmennustasi,
+      Online kuukausivalmennus on sinulle sopivampi kokonaisuus.
+    </div>
+
+    <a class="btn" href="index.html#yhteystiedot">
+      OTA YHTEYTTÄ &nbsp; →
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<section class="bottom-cta">
+
+  <div class="section-label">
+    OTA YHTEYTTÄ
+  </div>
+
+  <h2>
+    Etkö ole varma, mikä valmennus sopii sinulle?
+  </h2>
+
+  <p>
+    Laita minulle viestiä, niin voidaan yhdessä katsoa,
+    mikä valmennuskokonaisuus tukisi parhaiten juuri sinun
+    tavoitteitasi ja lähtötilannettasi.
+  </p>
+
+  <a class="btn" href="index.html#yhteystiedot">
+    OTA YHTEYTTÄ &nbsp; →
+  </a>
+
+</section>
+
+
+<footer>
+  © 2026 Laura Harvistola
+</footer>
+
+
+</body>
+</html>
