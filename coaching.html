@@ -1,1 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Coaching | Laura Harvistola</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --cream: #f5f1ed;
+      --white: #fffdfb;
+      --beige: #eee5df;
+      --rose: #bd8578;
+      --rose-dark: #a96f63;
+      --brown: #67554e;
+      --text: #292522;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+
+    /* HEADER */
+
+    header {
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: rgba(255,253,251,.97);
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-top {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--rose);
+      margin-bottom: 1px;
+    }
+
+    .brand-name {
+      font-size: 19px;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 38px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      transition: .2s;
+    }
+
+    nav a:hover {
+      color: var(--rose);
+    }
+
+    .language {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .language a {
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .language a:hover {
+      color: var(--rose);
+    }
+
+
+    /* PAGE INTRO */
+
+    .page-intro {
+      text-align: center;
+      padding: 95px 6% 85px;
+      background: var(--white);
+    }
+
+    .section-label {
+      color: var(--rose);
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .page-intro h1 {
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -2.5px;
+    }
+
+    .page-intro p {
+      max-width: 660px;
+      margin: 25px auto 0;
+      color: var(--brown);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+
+    /* COACHING SECTIONS */
+
+    .coaching-section {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      min-height: 650px;
+      background: var(--cream);
+    }
+
+    .coaching-section.reverse {
+      background: var(--beige);
+    }
+
+    .coaching-section.reverse .coaching-image {
+      order: 2;
+    }
+
+    .coaching-section.reverse .coaching-content {
+      order: 1;
+    }
+
+    .coaching-image {
+      min-height: 650px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+
+    /* IMAGES */
+
+    .training-image {
+      background-image: url("treenivalmennussivu.png");
+      background-position: center 70%;
+    }
+
+    .nutrition-image {
+      background-image: url("valmennusravinto.jpeg");
+      background-position: center 40%;
+    }
+
+    .monthly-image {
+      background-image: url("kuukausivalmennus.jpeg");
+      background-position: 60% 55%;
+    }
+
+
+    /* CONTENT */
+
+    .coaching-content {
+      padding: 80px 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .coaching-content h2 {
+      font-size: clamp(32px, 3vw, 46px);
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      color: var(--rose-dark);
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 26px;
+    }
+
+    .intro-text {
+      max-width: 580px;
+      color: var(--brown);
+      font-size: 14px;
+      line-height: 1.85;
+      margin-bottom: 28px;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .features li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .features li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--rose);
+    }
+
+    .note {
+      max-width: 580px;
+      color: var(--brown);
+      font-size: 13px;
+      line-height: 1.75;
+      margin-bottom: 30px;
+    }
+
+
+    /* BUTTON */
+
+    .btn {
+      display: inline-block;
+      width: fit-content;
+      text-decoration: none;
+      color: white;
+      background: var(--rose);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 6px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      background: var(--rose-dark);
+      transform: translateY(-2px);
+    }
+
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      padding: 100px 6%;
+      background: var(--white);
+    }
+
+    .cta h2 {
+      font-size: clamp(32px, 3vw, 46px);
+      font-weight: 300;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      max-width: 620px;
+      margin: 0 auto 30px;
+      color: var(--brown);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      background: var(--text);
+      color: #eee6e1;
+      text-align: center;
+      padding: 35px;
+      font-size: 11px;
+      letter-spacing: .8px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      header {
+        height: 80px;
+        padding: 0 6%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .brand-top {
+        font-size: 8px;
+      }
+
+      .brand-name {
+        font-size: 15px;
+      }
+
+      .page-intro {
+        padding: 70px 7%;
+      }
+
+      .coaching-section,
+      .coaching-section.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .coaching-section.reverse .coaching-image,
+      .coaching-section.reverse .coaching-content {
+        order: initial;
+      }
+
+      .coaching-image {
+        min-height: 520px;
+      }
+
+      .coaching-content {
+        padding: 65px 8%;
+      }
+
+      .training-image {
+        background-position: center 70%;
+      }
+
+      .nutrition-image {
+        background-position: center center;
+      }
+
+      .monthly-image {
+        background-position: 60% 55%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+  <a class="brand" href="en.html">
+    <span class="brand-top">COACH</span>
+    <span class="brand-name">Laura Harvistola</span>
+  </a>
+
+  <nav>
+    <a href="en.html">HOME</a>
+    <a href="coaching.html">COACHING</a>
+    <a href="en.html#about">ABOUT ME</a>
+    <a href="en.html#contact">CONTACT</a>
+  </nav>
+
+  <div class="language">
+    <a href="valmennukset.html">FI</a>
+    &nbsp;|&nbsp;
+    <a href="coaching.html">EN</a>
+  </div>
+
+</header>
+
+
+<!-- INTRO -->
+
+<section class="page-intro">
+
+  <div class="section-label">
+    ONLINE COACHING
+  </div>
+
+  <h1>
+    Find the right coaching for you
+  </h1>
+
+  <p>
+    Coaching isn't about being perfect. It's about finding an approach
+    that works for you, fits your everyday life and helps you move
+    towards your goals. Choose the option below based on whether you
+    want support with training, nutrition or both.
+  </p>
+
+</section>
+
+
+<!-- ONLINE COACHING -->
+
+<section
+  class="coaching-section"
+  id="online-coaching"
+>
+
+  <div class="coaching-image monthly-image"></div>
+
+  <div class="coaching-content">
+
+    <div class="section-label">
+      TRAINING + NUTRITION
+    </div>
+
+    <h2>
+      Online Coaching
+    </h2>
+
+    <div class="price">
+      149 € / month
+    </div>
+
+    <p class="intro-text">
+      Online Coaching is the most comprehensive option and is built
+      around your individual goals and lifestyle. Whether your goal is
+      fat loss, building muscle, improving your energy levels or making
+      a lasting lifestyle change, your training and nutrition are
+      designed to work together and fit into your everyday life –
+      without unnecessary extremes.
+    </p>
+
+    <p class="intro-text">
+      You won't be left alone with a plan. We review your progress every
+      week and adapt your coaching along the way based on your needs.
+      Your training programme is monitored weekly, we set goals for the
+      week ahead together, and make changes to both training and nutrition
+      whenever needed. This means your coaching evolves with your progress
+      rather than being a plan that's created once and then forgotten.
+    </p>
+
+    <ul class="features">
+      <li>Personalised nutrition plan</li>
+      <li>Personalised training programme</li>
+      <li>Ongoing support from your coach</li>
+      <li>Weekly check-ins and progress tracking</li>
+      <li>Updates and adjustments to your training and nutrition plans</li>
+      <li>3-month minimum coaching commitment</li>
+    </ul>
+
+    <a
+      class="btn"
+      href="en.html#contact"
+    >
+      GET IN TOUCH &nbsp; →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- TRAINING COACHING -->
+
+<section
+  class="coaching-section reverse"
+  id="training-coaching"
+>
+
+  <div class="coaching-image training-image"></div>
+
+  <div class="coaching-content">
+
+    <div class="section-label">
+      TRAINING
+    </div>
+
+    <h2>
+      Online Training Coaching
+    </h2>
+
+    <div class="price">
+      119 € / month
+    </div>
+
+    <p class="intro-text">
+      Training Coaching is for you if you want to train with purpose,
+      follow a programme designed specifically around your goals and
+      have the support of a coach throughout the process.
+    </p>
+
+    <p class="intro-text">
+      We review your training progress every week, set goals together
+      for the week ahead and adjust your programme as you develop.
+      I take care of the planning and progressive programming so that
+      you can focus on what matters – training and making progress.
+    </p>
+
+    <ul class="features">
+      <li>Personalised training programme designed around your goals</li>
+      <li>Ongoing support from your coach</li>
+      <li>Weekly check-ins and progress tracking</li>
+      <li>Updates and adjustments to your training programme</li>
+      <li>3-month minimum coaching commitment</li>
+    </ul>
+
+    <p class="note">
+      A nutrition plan is not included in Training Coaching.
+      If you would like nutrition coaching alongside your training,
+      choose Online Coaching.
+    </p>
+
+    <a
+      class="btn"
+      href="en.html#contact"
+    >
+      GET IN TOUCH &nbsp; →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- NUTRITION COACHING -->
+
+<section
+  class="coaching-section"
+  id="nutrition-coaching"
+>
+
+  <div class="coaching-image nutrition-image"></div>
+
+  <div class="coaching-content">
+
+    <div class="section-label">
+      NUTRITION
+    </div>
+
+    <h2>
+      Online Nutrition Coaching
+    </h2>
+
+    <div class="price">
+      119 € / month
+    </div>
+
+    <p class="intro-text">
+      Nutrition Coaching is for you if you want your nutrition to
+      support your goals without unnecessary restrictions or
+      unrealistic rules.
+    </p>
+
+    <p class="intro-text">
+      Your nutrition plan is designed personally around your goals
+      and everyday life. We review your progress every week and make
+      adjustments whenever needed, so your plan works in practice
+      and supports long-term progress.
+    </p>
+
+    <ul class="features">
+      <li>Personalised nutrition plan</li>
+      <li>Ongoing support from your coach</li>
+      <li>Weekly check-ins and progress tracking</li>
+      <li>Updates and adjustments to your nutrition plan</li>
+      <li>3-month minimum coaching commitment</li>
+    </ul>
+
+    <p class="note">
+      A training programme is not included in Nutrition Coaching.
+      If you would like to combine nutrition with goal-oriented
+      training, choose Online Coaching.
+    </p>
+
+    <a
+      class="btn"
+      href="en.html#contact"
+    >
+      GET IN TOUCH &nbsp; →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+  <div class="section-label">
+    NOT SURE WHICH OPTION IS RIGHT FOR YOU?
+  </div>
+
+  <h2>
+    I'll help you choose.
+  </h2>
+
+  <p>
+    If you're not sure which coaching option would best suit your
+    goals, send me a message. We can talk about your goals and find
+    the option that works best for you.
+  </p>
+
+  <a
+    class="btn"
+    href="en.html#contact"
+  >
+    GET IN TOUCH &nbsp; →
+  </a>
+
+</section>
+
+
+<footer>
+  © 2026 Laura Harvistola
+</footer>
+
+
+</body>
+
+</html>
