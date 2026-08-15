@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Laura Coaching</title>
+  <title>Valmentaja Laura Harvistola</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
     :root {
       --cream: #f5f1ed;
-      --light: #eee5df;
-      --rose: #b77f73;
-      --rose-dark: #9f695f;
-      --taupe: #cbbab0;
-      --brown: #5f504a;
-      --text: #292522;
       --white: #fffdfb;
+      --beige: #eee5df;
+      --rose: #bd8578;
+      --rose-dark: #a96f63;
+      --brown: #67554e;
+      --text: #292522;
     }
 
     * {
@@ -34,152 +39,158 @@
 
     body {
       font-family: "DM Sans", sans-serif;
-      color: var(--text);
       background: var(--cream);
+      color: var(--text);
       line-height: 1.6;
     }
 
-    /* NAVIGATION */
+
+    /* HEADER */
 
     header {
-      height: 92px;
+      height: 96px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 7%;
-      background: rgba(255, 253, 251, 0.96);
+      padding: 0 6%;
+      background: rgba(255,253,251,.97);
     }
 
-    .logo {
-      font-size: 25px;
-      letter-spacing: 8px;
+    .brand {
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-top {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--rose);
+      margin-bottom: 1px;
+    }
+
+    .brand-name {
+      font-size: 19px;
       font-weight: 400;
-    }
-
-    .logo small {
-      display: block;
-      text-align: center;
-      font-size: 8px;
-      letter-spacing: 5px;
-      margin-top: -3px;
+      letter-spacing: 1px;
     }
 
     nav {
       display: flex;
-      align-items: center;
       gap: 38px;
+      align-items: center;
     }
 
     nav a {
-      color: var(--text);
       text-decoration: none;
+      color: var(--text);
       font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.6px;
+      letter-spacing: .5px;
+      transition: .2s;
     }
 
     nav a:hover {
       color: var(--rose);
     }
 
-    .languages {
+    .language {
       font-size: 12px;
       letter-spacing: 1px;
     }
 
+
     /* HERO */
 
     .hero {
-      min-height: 650px;
+      min-height: 670px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 49% 51%;
       background: var(--white);
     }
 
     .hero-content {
+      padding: 90px 10% 85px 12%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 80px 12% 80px 14%;
     }
 
     .eyebrow {
       color: var(--rose);
-      font-size: 12px;
-      letter-spacing: 2.4px;
+      font-size: 11px;
       font-weight: 500;
-      margin-bottom: 24px;
+      letter-spacing: 2.1px;
+      margin-bottom: 28px;
     }
 
     h1 {
       font-size: clamp(48px, 5vw, 76px);
-      line-height: 1.02;
-      letter-spacing: -3px;
       font-weight: 300;
-      max-width: 620px;
+      line-height: 1.04;
+      letter-spacing: -3px;
     }
 
-    h1 .accent {
+    h1 span {
       color: var(--rose);
     }
 
-    .hero-line {
-      width: 45px;
+    .small-line {
+      width: 48px;
       height: 2px;
       background: var(--rose);
       margin: 32px 0;
     }
 
     .hero-text {
-      max-width: 480px;
+      max-width: 500px;
       font-size: 15px;
-      line-height: 1.8;
+      line-height: 1.85;
       margin-bottom: 32px;
     }
 
-    .button {
+    .btn {
       display: inline-block;
       width: fit-content;
-      background: var(--rose);
-      color: white;
       text-decoration: none;
-      padding: 15px 28px;
-      border-radius: 5px;
-      font-size: 12px;
-      letter-spacing: 1px;
-      transition: 0.25s;
+      color: white;
+      background: var(--rose);
+      padding: 15px 30px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      transition: .25s;
     }
 
-    .button:hover {
+    .btn:hover {
       background: var(--rose-dark);
       transform: translateY(-2px);
     }
 
     .hero-image {
-      min-height: 650px;
-      background:
-        linear-gradient(rgba(80,60,50,.08), rgba(80,60,50,.08)),
-        linear-gradient(135deg, #d6c6bb, #9f897b);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,.8);
-      letter-spacing: 2px;
-      font-size: 12px;
+      min-height: 670px;
+
+      background-image: url("images/hero.jpg");
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
     }
+
 
     /* BENEFITS */
 
     .benefits {
-      background: var(--light);
+      background: var(--beige);
+      padding: 34px 6%;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      padding: 32px 7%;
+      grid-template-columns: repeat(4,1fr);
     }
 
     .benefit {
       padding: 5px 28px;
-      border-right: 1px solid rgba(95,80,74,.15);
+      border-right: 1px solid rgba(80,60,50,.12);
     }
 
     .benefit:last-child {
@@ -187,10 +198,10 @@
     }
 
     .benefit-title {
-      font-size: 12px;
-      letter-spacing: 1.5px;
+      font-size: 11px;
       font-weight: 600;
-      margin-bottom: 5px;
+      letter-spacing: 1.5px;
+      margin-bottom: 4px;
     }
 
     .benefit p {
@@ -198,55 +209,71 @@
       color: var(--brown);
     }
 
-    /* COACHING */
+
+    /* VALMENNUKSET */
 
     .coaching {
-      padding: 90px 7% 110px;
+      padding: 90px 6% 110px;
       background: var(--cream);
     }
 
-    .section-intro {
+    .section-head {
       text-align: center;
       margin-bottom: 45px;
     }
 
     .section-label {
       color: var(--rose);
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 2px;
+      font-weight: 500;
       margin-bottom: 10px;
     }
 
     h2 {
-      font-size: clamp(32px, 3vw, 46px);
+      font-size: clamp(32px,3vw,44px);
       font-weight: 300;
       letter-spacing: -1.5px;
+      line-height: 1.2;
     }
 
     .cards {
-      max-width: 1250px;
+      max-width: 1280px;
       margin: auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(3,1fr);
+      gap: 24px;
     }
 
     .card {
       background: var(--white);
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(60,45,38,.07);
+      box-shadow: 0 10px 35px rgba(50,35,30,.07);
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
     }
 
     .card-image {
-      height: 230px;
-      background: linear-gradient(135deg, #d7cbc3, #aa978b);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 11px;
-      letter-spacing: 1.5px;
+      height: 280px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .training-image {
+      background-image: url("images/treenivalmennus.jpg");
+    }
+
+    .nutrition-image {
+      background-image: url("images/ravintovalmennus.jpg");
+    }
+
+    .monthly-image {
+      background-image: url("images/kuukausivalmennus.jpg");
+      background-position: center 40%;
     }
 
     .card-content {
@@ -260,65 +287,106 @@
     }
 
     .card p {
-      font-size: 13px;
       color: var(--brown);
-      min-height: 84px;
+      font-size: 13px;
+      min-height: 82px;
+    }
+
+    .price {
+      margin-top: 18px;
+      font-size: 18px;
+      font-weight: 500;
     }
 
     .read-more {
       display: inline-block;
       margin-top: 18px;
-      color: var(--rose);
       text-decoration: none;
+      color: var(--rose);
       font-size: 11px;
       font-weight: 600;
-      letter-spacing: 1.3px;
+      letter-spacing: 1px;
     }
+
 
     /* ABOUT */
 
     .about {
       display: grid;
-      grid-template-columns: 42% 58%;
-      min-height: 500px;
-      background: var(--light);
+      grid-template-columns: 45% 55%;
+      min-height: 600px;
+      background: var(--beige);
     }
 
     .about-image {
-      background: linear-gradient(135deg, #bca99c, #7e695d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      letter-spacing: 2px;
-      font-size: 12px;
+      background-image: url("images/laura.jpg");
+      background-size: cover;
+      background-position: center 15%;
+      min-height: 600px;
     }
 
     .about-content {
-      padding: 80px 12%;
+      padding: 90px 12%;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
     .about-content p {
-      max-width: 580px;
-      margin: 22px 0 28px;
+      max-width: 600px;
+      margin: 24px 0 30px;
       color: var(--brown);
       font-size: 14px;
+      line-height: 1.85;
     }
+
+
+    /* CONTACT */
+
+    .contact {
+      padding: 100px 6%;
+      text-align: center;
+      background: var(--white);
+    }
+
+    .contact p {
+      max-width: 570px;
+      margin: 20px auto 30px;
+      color: var(--brown);
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      background: var(--text);
+      color: #eee6e1;
+      text-align: center;
+      padding: 35px;
+      font-size: 11px;
+      letter-spacing: .8px;
+    }
+
 
     /* MOBILE */
 
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
 
       header {
-        height: auto;
-        padding: 25px 6%;
+        height: 80px;
+        padding: 0 6%;
       }
 
       nav {
         display: none;
+      }
+
+      .brand-top {
+        font-size: 8px;
+      }
+
+      .brand-name {
+        font-size: 15px;
       }
 
       .hero {
@@ -330,16 +398,12 @@
       }
 
       .hero-image {
-        min-height: 480px;
-      }
-
-      h1 {
-        letter-spacing: -2px;
+        min-height: 520px;
       }
 
       .benefits {
         grid-template-columns: 1fr 1fr;
-        gap: 25px 0;
+        row-gap: 25px;
       }
 
       .benefit:nth-child(2) {
@@ -350,24 +414,38 @@
         grid-template-columns: 1fr;
       }
 
+      .card-image {
+        height: 360px;
+      }
+
       .about {
         grid-template-columns: 1fr;
       }
 
       .about-image {
-        min-height: 450px;
+        min-height: 580px;
       }
+
+      .about-content {
+        padding: 70px 8%;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
 <header>
-  <div class="logo">
-    LAURA
-    <small>COACHING</small>
-  </div>
+
+  <a class="brand" href="#">
+    <span class="brand-top">VALMENTAJA</span>
+    <span class="brand-name">Laura Harvistola</span>
+  </a>
 
   <nav>
     <a href="#">ETUSIVU</a>
@@ -376,8 +454,12 @@
     <a href="#yhteystiedot">YHTEYSTIEDOT</a>
   </nav>
 
-  <div class="languages">FI &nbsp;|&nbsp; EN</div>
+  <div class="language">
+    FI &nbsp;|&nbsp; EN
+  </div>
+
 </header>
+
 
 <section class="hero">
 
@@ -390,26 +472,25 @@
     <h1>
       Strong looks<br>
       different on<br>
-      <span class="accent">everyone.</span>
+      <span>everyone.</span>
     </h1>
 
-    <div class="hero-line"></div>
+    <div class="small-line"></div>
 
     <p class="hero-text">
       Tavoitteesi voi olla painonpudotus, lihasmassan kasvatus,
       optimaalisempi ravinto tai elämäntapamuutos.
-      Tavoitteeni on auttaa sinua tekemään muutos, joka myös pysyy.
+      Tavoitteeni on auttaa sinua tekemään muutos,
+      joka myös pysyy.
     </p>
 
-    <a class="button" href="#valmennukset">
+    <a class="btn" href="#valmennukset">
       TUTUSTU VALMENNUKSIIN &nbsp; →
     </a>
 
   </div>
 
-  <div class="hero-image">
-    OMA KUVA
-  </div>
+  <div class="hero-image"></div>
 
 </section>
 
@@ -423,17 +504,17 @@
 
   <div class="benefit">
     <div class="benefit-title">RAVINTO</div>
-    <p>Joustavat ja käytännölliset ravitsemissuunnitelmat</p>
+    <p>Joustavat ja käytännölliset ravitsemussuunnitelmat</p>
   </div>
 
   <div class="benefit">
     <div class="benefit-title">TUKI</div>
-    <p>Tukea, ohjausta ja motivaatiota koko matkan ajan</p>
+    <p>Tukea ja ohjausta koko matkan ajan</p>
   </div>
 
   <div class="benefit">
     <div class="benefit-title">TULOKSET</div>
-    <p>Pysyviä tuloksia, jotka näkyvät arjessasi</p>
+    <p>Pysyviä tuloksia, jotka toimivat myös arjessa</p>
   </div>
 
 </section>
@@ -441,48 +522,99 @@
 
 <section class="coaching" id="valmennukset">
 
-  <div class="section-intro">
-    <div class="section-label">VALMENNUKSET</div>
-    <h2>Valitse sinulle sopiva kokonaisuus</h2>
+  <div class="section-head">
+
+    <div class="section-label">
+      VALMENNUKSET
+    </div>
+
+    <h2>
+      Valitse sinulle sopiva kokonaisuus
+    </h2>
+
   </div>
+
 
   <div class="cards">
 
+
     <div class="card">
-      <div class="card-image">TREENIKUVA</div>
+
+      <div class="card-image training-image"></div>
+
       <div class="card-content">
+
         <h3>Treenivalmennus</h3>
+
         <p>
           Yksilöllinen treeniohjelma tavoitteidesi mukaan.
-          Kuntosaliohjelma, kuormituksen seuranta ja tuki.
+          Ohjelma, seuranta ja tuki kehityksesi tueksi.
         </p>
-        <a href="#" class="read-more">LUE LISÄÄ &nbsp; →</a>
+
+        <div class="price">
+          119 € / kk
+        </div>
+
+        <a class="read-more" href="#">
+          LUE LISÄÄ &nbsp; →
+        </a>
+
       </div>
+
     </div>
 
+
     <div class="card">
-      <div class="card-image">RAVINTOKUVA</div>
+
+      <div class="card-image nutrition-image"></div>
+
       <div class="card-content">
+
         <h3>Ravintovalmennus</h3>
+
         <p>
-          Ravitsemussuunnitelma, joka sopii elämäntyyliisi.
-          Joustavaa, helppoa ja tuloksellista.
+          Sinulle suunniteltu ravitsemuskokonaisuus,
+          joka tukee tavoitteitasi mutta sopii myös oikeaan elämään.
         </p>
-        <a href="#" class="read-more">LUE LISÄÄ &nbsp; →</a>
+
+        <div class="price">
+          119 € / kk
+        </div>
+
+        <a class="read-more" href="#">
+          LUE LISÄÄ &nbsp; →
+        </a>
+
       </div>
+
     </div>
 
+
     <div class="card">
-      <div class="card-image">VALMENNUSKUVA</div>
+
+      <div class="card-image monthly-image"></div>
+
       <div class="card-content">
+
         <h3>Kuukausivalmennus</h3>
+
         <p>
-          Treeni, ravitsemus, seuranta ja jatkuva tuki.
-          Kaikki yhdessä paketissa.
+          Treeni, ravitsemus, seuranta ja jatkuva tuki
+          yhdessä kokonaisuudessa.
         </p>
-        <a href="#" class="read-more">LUE LISÄÄ &nbsp; →</a>
+
+        <div class="price">
+          149 € / kk
+        </div>
+
+        <a class="read-more" href="#">
+          LUE LISÄÄ &nbsp; →
+        </a>
+
       </div>
+
     </div>
+
 
   </div>
 
@@ -491,30 +623,66 @@
 
 <section class="about" id="minusta">
 
-  <div class="about-image">
-    OMA KUVA
-  </div>
+  <div class="about-image"></div>
 
   <div class="about-content">
 
-    <div class="section-label">VALMENTAJASI</div>
+    <div class="section-label">
+      VALMENTAJASI
+    </div>
 
-    <h2>Laura Harvistola</h2>
+    <h2>
+      Laura Harvistola
+    </h2>
 
     <p>
-      Olen valmentaja ja hyvinvointiin intohimolla suhtautuva
-      ammattilainen. Tavoitteeni on auttaa sinua rakentamaan
-      vahvempaa kehoa ja elämäntapaa, joka toimii myös tavallisessa
-      arjessa – ilman äärimmäisyyksiä.
+      Uskon pysyviin muutoksiin ilman äärimmäisyyksiä.
+      Tavoitteesi voi olla painonpudotus, lihaksikkaampi ja
+      esteettisempi keho, parempi ravitsemus tai kokonaisvaltainen
+      elämäntapamuutos.
+
+      <br><br>
+
+      Muutos vaatii aina muutoksen, mutta sen ei tarvitse tarkoittaa
+      kaikesta luopumista, pitkiä kieltolistoja tai itsensä
+      loppuun polttamista.
     </p>
 
-    <a href="#" class="button">
+    <a class="btn" href="#">
       LUE LISÄÄ MINUSTA &nbsp; →
     </a>
 
   </div>
 
 </section>
+
+
+<section class="contact" id="yhteystiedot">
+
+  <div class="section-label">
+    OTA YHTEYTTÄ
+  </div>
+
+  <h2>
+    Aloitetaanko yhdessä?
+  </h2>
+
+  <p>
+    Jos haluat kuulla lisää valmennuksesta tai et ole varma,
+    mikä vaihtoehto sopisi juuri sinulle, ota rohkeasti yhteyttä.
+  </p>
+
+  <a class="btn" href="#">
+    OTA YHTEYTTÄ &nbsp; →
+  </a>
+
+</section>
+
+
+<footer>
+  © 2026 Laura Harvistola
+</footer>
+
 
 </body>
 </html>
