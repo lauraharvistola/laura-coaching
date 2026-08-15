@@ -3,12 +3,518 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Laura Coaching</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f5f1ed;
+      --light: #eee5df;
+      --rose: #b77f73;
+      --rose-dark: #9f695f;
+      --taupe: #cbbab0;
+      --brown: #5f504a;
+      --text: #292522;
+      --white: #fffdfb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 7%;
+      background: rgba(255, 253, 251, 0.96);
+    }
+
+    .logo {
+      font-size: 25px;
+      letter-spacing: 8px;
+      font-weight: 400;
+    }
+
+    .logo small {
+      display: block;
+      text-align: center;
+      font-size: 8px;
+      letter-spacing: 5px;
+      margin-top: -3px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 38px;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.6px;
+    }
+
+    nav a:hover {
+      color: var(--rose);
+    }
+
+    .languages {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 12% 80px 14%;
+    }
+
+    .eyebrow {
+      color: var(--rose);
+      font-size: 12px;
+      letter-spacing: 2.4px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 5vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -3px;
+      font-weight: 300;
+      max-width: 620px;
+    }
+
+    h1 .accent {
+      color: var(--rose);
+    }
+
+    .hero-line {
+      width: 45px;
+      height: 2px;
+      background: var(--rose);
+      margin: 32px 0;
+    }
+
+    .hero-text {
+      max-width: 480px;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      width: fit-content;
+      background: var(--rose);
+      color: white;
+      text-decoration: none;
+      padding: 15px 28px;
+      border-radius: 5px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      transition: 0.25s;
+    }
+
+    .button:hover {
+      background: var(--rose-dark);
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      min-height: 650px;
+      background:
+        linear-gradient(rgba(80,60,50,.08), rgba(80,60,50,.08)),
+        linear-gradient(135deg, #d6c6bb, #9f897b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.8);
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    /* BENEFITS */
+
+    .benefits {
+      background: var(--light);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 32px 7%;
+    }
+
+    .benefit {
+      padding: 5px 28px;
+      border-right: 1px solid rgba(95,80,74,.15);
+    }
+
+    .benefit:last-child {
+      border-right: none;
+    }
+
+    .benefit-title {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .benefit p {
+      font-size: 12px;
+      color: var(--brown);
+    }
+
+    /* COACHING */
+
+    .coaching {
+      padding: 90px 7% 110px;
+      background: var(--cream);
+    }
+
+    .section-intro {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      color: var(--rose);
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 3vw, 46px);
+      font-weight: 300;
+      letter-spacing: -1.5px;
+    }
+
+    .cards {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(60,45,38,.07);
+    }
+
+    .card-image {
+      height: 230px;
+      background: linear-gradient(135deg, #d7cbc3, #aa978b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+    }
+
+    .card-content {
+      padding: 28px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--brown);
+      min-height: 84px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--rose);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.3px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 42% 58%;
+      min-height: 500px;
+      background: var(--light);
+    }
+
+    .about-image {
+      background: linear-gradient(135deg, #bca99c, #7e695d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    .about-content {
+      padding: 80px 12%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-content p {
+      max-width: 580px;
+      margin: 22px 0 28px;
+      color: var(--brown);
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      header {
+        height: auto;
+        padding: 25px 6%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        padding: 70px 7%;
+      }
+
+      .hero-image {
+        min-height: 480px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 0;
+      }
+
+      .benefit:nth-child(2) {
+        border-right: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 450px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Laura Coaching</h1>
-  <p>Online coaching</p>
-  <p>Nettisivu on toiminnassa 🎉</p>
+
+<header>
+  <div class="logo">
+    LAURA
+    <small>COACHING</small>
+  </div>
+
+  <nav>
+    <a href="#">ETUSIVU</a>
+    <a href="#valmennukset">VALMENNUKSET</a>
+    <a href="#minusta">MINUSTA</a>
+    <a href="#yhteystiedot">YHTEYSTIEDOT</a>
+  </nav>
+
+  <div class="languages">FI &nbsp;|&nbsp; EN</div>
+</header>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      ONLINE COACHING &nbsp;•&nbsp; TRAINING &nbsp;•&nbsp; NUTRITION
+    </div>
+
+    <h1>
+      Strong looks<br>
+      different on<br>
+      <span class="accent">everyone.</span>
+    </h1>
+
+    <div class="hero-line"></div>
+
+    <p class="hero-text">
+      Tavoitteesi voi olla painonpudotus, lihasmassan kasvatus,
+      optimaalisempi ravinto tai elämäntapamuutos.
+      Tavoitteeni on auttaa sinua tekemään muutos, joka myös pysyy.
+    </p>
+
+    <a class="button" href="#valmennukset">
+      TUTUSTU VALMENNUKSIIN &nbsp; →
+    </a>
+
+  </div>
+
+  <div class="hero-image">
+    OMA KUVA
+  </div>
+
+</section>
+
+
+<section class="benefits">
+
+  <div class="benefit">
+    <div class="benefit-title">TREENI</div>
+    <p>Tehokkaat ja yksilölliset treeniohjelmat</p>
+  </div>
+
+  <div class="benefit">
+    <div class="benefit-title">RAVINTO</div>
+    <p>Joustavat ja käytännölliset ravitsemissuunnitelmat</p>
+  </div>
+
+  <div class="benefit">
+    <div class="benefit-title">TUKI</div>
+    <p>Tukea, ohjausta ja motivaatiota koko matkan ajan</p>
+  </div>
+
+  <div class="benefit">
+    <div class="benefit-title">TULOKSET</div>
+    <p>Pysyviä tuloksia, jotka näkyvät arjessasi</p>
+  </div>
+
+</section>
+
+
+<section class="coaching" id="valmennukset">
+
+  <div class="section-intro">
+    <div class="section-label">VALMENNUKSET</div>
+    <h2>Valitse sinulle sopiva kokonaisuus</h2>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-image">TREENIKUVA</div>
+      <div class="card-content">
+        <h3>Treenivalmennus</h3>
+        <p>
+          Yksilöllinen treeniohjelma tavoitteidesi mukaan.
+          Kuntosaliohjelma, kuormituksen seuranta ja tuki.
+        </p>
+        <a href="#" class="read-more">LUE LISÄÄ &nbsp; →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">RAVINTOKUVA</div>
+      <div class="card-content">
+        <h3>Ravintovalmennus</h3>
+        <p>
+          Ravitsemussuunnitelma, joka sopii elämäntyyliisi.
+          Joustavaa, helppoa ja tuloksellista.
+        </p>
+        <a href="#" class="read-more">LUE LISÄÄ &nbsp; →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">VALMENNUSKUVA</div>
+      <div class="card-content">
+        <h3>Kuukausivalmennus</h3>
+        <p>
+          Treeni, ravitsemus, seuranta ja jatkuva tuki.
+          Kaikki yhdessä paketissa.
+        </p>
+        <a href="#" class="read-more">LUE LISÄÄ &nbsp; →</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="about" id="minusta">
+
+  <div class="about-image">
+    OMA KUVA
+  </div>
+
+  <div class="about-content">
+
+    <div class="section-label">VALMENTAJASI</div>
+
+    <h2>Laura Harvistola</h2>
+
+    <p>
+      Olen valmentaja ja hyvinvointiin intohimolla suhtautuva
+      ammattilainen. Tavoitteeni on auttaa sinua rakentamaan
+      vahvempaa kehoa ja elämäntapaa, joka toimii myös tavallisessa
+      arjessa – ilman äärimmäisyyksiä.
+    </p>
+
+    <a href="#" class="button">
+      LUE LISÄÄ MINUSTA &nbsp; →
+    </a>
+
+  </div>
+
+</section>
+
 </body>
 </html>
