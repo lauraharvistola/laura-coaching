@@ -54,8 +54,6 @@
       justify-content: space-between;
       padding: 0 6%;
       background: rgba(255,253,251,.97);
-      position: relative;
-      z-index: 10;
     }
 
     .brand {
@@ -93,8 +91,7 @@
       transition: .2s;
     }
 
-    nav a:hover,
-    nav a.active {
+    nav a:hover {
       color: var(--rose);
     }
 
@@ -104,11 +101,11 @@
     }
 
 
-    /* PAGE HERO */
+    /* PAGE INTRO */
 
-    .page-hero {
-      padding: 105px 6% 95px;
+    .page-intro {
       text-align: center;
+      padding: 95px 6% 85px;
       background: var(--white);
     }
 
@@ -120,47 +117,60 @@
       margin-bottom: 14px;
     }
 
-    h1 {
-      font-size: clamp(44px, 5vw, 70px);
+    .page-intro h1 {
+      font-size: clamp(42px, 5vw, 68px);
       font-weight: 300;
-      line-height: 1.08;
+      line-height: 1.1;
       letter-spacing: -2.5px;
-      margin-bottom: 25px;
     }
 
-    .page-hero p {
-      max-width: 690px;
-      margin: 0 auto;
+    .page-intro p {
+      max-width: 660px;
+      margin: 25px auto 0;
       color: var(--brown);
       font-size: 15px;
       line-height: 1.85;
     }
 
-    .small-line {
-      width: 48px;
-      height: 2px;
-      background: var(--rose);
-      margin: 30px auto;
-    }
-
 
     /* COACHING SECTIONS */
 
-    .coaching-block {
+    .coaching-section {
       display: grid;
-      grid-template-columns: 48% 52%;
-      min-height: 680px;
-      scroll-margin-top: 30px;
+      grid-template-columns: 50% 50%;
+      min-height: 650px;
+      background: var(--cream);
     }
 
-    .coaching-block.reverse {
-      grid-template-columns: 52% 48%;
+    .coaching-section.reverse {
+      background: var(--beige);
+    }
+
+    .coaching-section.reverse .coaching-image {
+      order: 2;
+    }
+
+    .coaching-section.reverse .coaching-content {
+      order: 1;
     }
 
     .coaching-image {
-      min-height: 680px;
+      min-height: 650px;
       background-size: cover;
       background-repeat: no-repeat;
+    }
+
+
+    /* IMAGES */
+
+    .training-image {
+      background-image: url("treenivalmennussivu.png");
+      background-position: center center;
+    }
+
+    .nutrition-image {
+      background-image: url("valmennusravinto.jpeg");
+      background-position: center center;
     }
 
     .monthly-image {
@@ -168,105 +178,69 @@
       background-position: 60% 55%;
     }
 
-    .training-image {
-      background-image: url("treenivalmennus.jpeg");
-      background-position: center 32%;
-    }
 
-    .nutrition-image {
-      background-image: url("ravintovalmennus.jpeg");
-      background-position: center center;
-    }
+    /* CONTENT */
 
     .coaching-content {
-      padding: 80px 11%;
+      padding: 80px 10%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: var(--cream);
     }
 
-    .reverse .coaching-content {
-      background: var(--beige);
-    }
-
-    .reverse .coaching-image {
-      order: 2;
-    }
-
-    .reverse .coaching-content {
-      order: 1;
-    }
-
-    .coaching-number {
-      color: var(--rose);
-      font-size: 10px;
-      letter-spacing: 2px;
-      font-weight: 500;
-      margin-bottom: 13px;
-    }
-
-    h2 {
-      font-size: clamp(32px, 3vw, 44px);
+    .coaching-content h2 {
+      font-size: clamp(32px, 3vw, 46px);
       font-weight: 300;
+      line-height: 1.2;
       letter-spacing: -1.5px;
-      line-height: 1.15;
+      margin-bottom: 20px;
     }
 
     .price {
-      margin: 15px 0 26px;
       color: var(--rose-dark);
-      font-size: 19px;
+      font-size: 20px;
       font-weight: 500;
+      margin-bottom: 26px;
     }
 
-    .intro {
-      max-width: 620px;
+    .intro-text {
+      max-width: 580px;
       color: var(--brown);
       font-size: 14px;
       line-height: 1.85;
-      margin-bottom: 16px;
+      margin-bottom: 28px;
     }
 
-    .includes-title {
-      margin-top: 14px;
-      margin-bottom: 13px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1.2px;
-    }
-
-    .includes {
+    .features {
       list-style: none;
-      margin-bottom: 24px;
+      margin-bottom: 30px;
     }
 
-    .includes li {
+    .features li {
       position: relative;
-      padding: 6px 0 6px 22px;
-      color: var(--brown);
-      font-size: 13px;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      color: var(--text);
+      font-size: 14px;
     }
 
-    .includes li::before {
-      content: "•";
+    .features li::before {
+      content: "—";
       position: absolute;
       left: 0;
-      top: 5px;
       color: var(--rose);
-      font-size: 18px;
     }
 
     .note {
-      max-width: 620px;
-      padding: 17px 19px;
-      margin: 4px 0 27px;
-      background: rgba(255,253,251,.65);
-      border-left: 2px solid var(--rose);
+      max-width: 580px;
       color: var(--brown);
       font-size: 13px;
       line-height: 1.75;
+      margin-bottom: 30px;
     }
+
+
+    /* BUTTON */
 
     .btn {
       display: inline-block;
@@ -282,7 +256,6 @@
       font-weight: 500;
       letter-spacing: 1.2px;
       transition: .25s;
-      cursor: pointer;
     }
 
     .btn:hover {
@@ -291,24 +264,27 @@
     }
 
 
-    /* BOTTOM CTA */
+    /* CTA */
 
-    .bottom-cta {
-      padding: 100px 6%;
+    .cta {
       text-align: center;
+      padding: 100px 6%;
       background: var(--white);
     }
 
-    .bottom-cta h2 {
-      margin-bottom: 20px;
+    .cta h2 {
+      font-size: clamp(32px, 3vw, 46px);
+      font-weight: 300;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
     }
 
-    .bottom-cta p {
+    .cta p {
       max-width: 620px;
       margin: 0 auto 30px;
       color: var(--brown);
       font-size: 14px;
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
 
@@ -345,47 +321,51 @@
         font-size: 15px;
       }
 
-      .page-hero {
-        padding: 75px 7% 70px;
+      .page-intro {
+        padding: 70px 7%;
       }
 
-      .coaching-block,
-      .coaching-block.reverse {
+      .coaching-section,
+      .coaching-section.reverse {
         grid-template-columns: 1fr;
       }
 
-      .coaching-image,
-      .reverse .coaching-image {
-        min-height: 520px;
-        order: 1;
+      .coaching-section.reverse .coaching-image,
+      .coaching-section.reverse .coaching-content {
+        order: initial;
       }
 
-      .coaching-content,
-      .reverse .coaching-content {
+      .coaching-image {
+        min-height: 520px;
+      }
+
+      .coaching-content {
         padding: 65px 8%;
-        order: 2;
+      }
+
+      .training-image {
+        background-position: center center;
+      }
+
+      .nutrition-image {
+        background-position: center center;
       }
 
       .monthly-image {
         background-position: 60% 55%;
       }
 
-      .training-image {
-        background-position: center 32%;
-      }
-
-      .bottom-cta {
-        padding: 75px 8%;
-      }
-
     }
 
   </style>
+
 </head>
 
 
 <body>
 
+
+<!-- HEADER -->
 
 <header>
 
@@ -396,7 +376,7 @@
 
   <nav>
     <a href="index.html">ETUSIVU</a>
-    <a class="active" href="valmennukset.html">VALMENNUKSET</a>
+    <a href="valmennukset.html">VALMENNUKSET</a>
     <a href="index.html#minusta">MINUSTA</a>
     <a href="index.html#yhteystiedot">YHTEYSTIEDOT</a>
   </nav>
@@ -408,33 +388,32 @@
 </header>
 
 
-<section class="page-hero">
+<!-- INTRO -->
+
+<section class="page-intro">
 
   <div class="section-label">
     ONLINE VALMENNUKSET
   </div>
 
   <h1>
-    Valmennus sinun tavoitteidesi tueksi
+    Löydä sinulle sopiva valmennus
   </h1>
 
-  <div class="small-line"></div>
-
   <p>
-    Jokainen lähtötilanne ja tavoite on erilainen.
-    Valitse kokonaisuus sen mukaan, kaipaatko tukea treeniin,
-    ravintoon vai molempiin. Kaikissa valmennuksissa etenemistäsi
-    seurataan säännöllisesti ja valmennusta muokataan tarpeidesi mukaan.
+    Valmennuksessa ei ole kyse täydellisyydestä vaan siitä,
+    että löydämme juuri sinulle ja sinun arkeesi sopivan tavan edetä
+    kohti tavoitteitasi. Valitse alta kokonaisuus sen mukaan,
+    kaipaatko apua treeniin, ravintoon vai molempiin.
   </p>
 
 </section>
 
 
-
 <!-- KUUKAUSIVALMENNUS -->
 
 <section
-  class="coaching-block"
+  class="coaching-section"
   id="kuukausivalmennus"
 >
 
@@ -442,8 +421,8 @@
 
   <div class="coaching-content">
 
-    <div class="coaching-number">
-      KOKONAISVALTAINEN VALMENNUS
+    <div class="section-label">
+      TREENI + RAVINTO
     </div>
 
     <h2>
@@ -454,46 +433,35 @@
       149 € / kk
     </div>
 
-    <p class="intro">
-      Kuukausivalmennus on sinulle, joka haluat kokonaisvaltaista
-      tukea tavoitteidesi saavuttamiseen. Saat juuri sinulle suunnitellun
-      treeni- ja ravinto-ohjelman sekä valmentajan tuen koko matkan ajaksi.
+    <p class="intro-text">
+      Kuukausivalmennus on kokonaisvaltaisin vaihtoehto sinulle,
+      joka haluat kehittää sekä treeniä että ravitsemusta ja saada
+      samalla jatkuvaa tukea matkallesi.
+      Valmennus suunnitellaan henkilökohtaisesti sinun tavoitteidesi,
+      lähtötilanteesi ja arkesi ympärille.
     </p>
 
-    <p class="intro">
-      Valmennuksessa et jää yksin ohjelmien kanssa. Seuraamme etenemistäsi
-      viikoittain, käymme läpi treenien ja ravinnon toteutumista ja asetamme
-      yhdessä tavoitteet seuraavalle viikolle. Näin tiedämme, mikä toimii
-      ja missä tarvitsemme muutoksia.
+    <p class="intro-text">
+      Treeniohjelmaasi seurataan viikoittain ja katsomme yhdessä,
+      miten harjoittelu etenee. Asetamme tavoitteita seuraavalle
+      viikolle ja teemme tarvittaessa muutoksia sekä treeniin että
+      ravintoon. Näin valmennus elää kehityksesi mukana eikä jää
+      vain kerran tehdyksi ohjelmaksi.
     </p>
 
-    <p class="intro">
-      Treeni- ja ravinto-ohjelmasi eivät ole kiveen hakattuja.
-      Niitä muokataan valmennuksen aikana tarpeen, kehityksen
-      ja elämäntilanteesi mukaan.
-    </p>
-
-    <div class="includes-title">
-      VALMENNUKSEEN KUULUU
-    </div>
-
-    <ul class="includes">
-      <li>Henkilökohtaisesti suunniteltu treeniohjelma</li>
+    <ul class="features">
       <li>Henkilökohtaisesti suunniteltu ravinto-ohjelma</li>
+      <li>Henkilökohtaisesti suunniteltu treeniohjelma</li>
       <li>Valmentajan jatkuva tuki</li>
-      <li>Viikoittainen raportointi ja seuranta</li>
-      <li>Yhteiset tavoitteet jokaiselle uudelle viikolle</li>
-      <li>Treeni- ja ravinto-ohjelmien päivitykset tarpeen mukaan</li>
-      <li>Valmennuksen minimikesto 3 kk</li>
+      <li>Viikkoraportointi ja seuranta</li>
+      <li>Ravinto- ja treeniohjelman päivitykset sekä muutokset</li>
+      <li>3 kuukauden minimisitoutuminen valmennukseen</li>
     </ul>
 
-    <div class="note">
-      Tavoitteena ei ole täydellinen suorittaminen, vaan löytää juuri
-      sinulle toimiva tapa edetä kohti tavoitteitasi ja rakentaa samalla
-      tapoja, joita pystyt ylläpitämään myös pitkällä aikavälillä.
-    </div>
-
-    <a class="btn" href="index.html#yhteystiedot">
+    <a
+      class="btn"
+      href="index.html#yhteystiedot"
+    >
       OTA YHTEYTTÄ &nbsp; →
     </a>
 
@@ -502,11 +470,10 @@
 </section>
 
 
-
 <!-- TREENIVALMENNUS -->
 
 <section
-  class="coaching-block reverse"
+  class="coaching-section reverse"
   id="treenivalmennus"
 >
 
@@ -514,8 +481,8 @@
 
   <div class="coaching-content">
 
-    <div class="coaching-number">
-      TAVOITTEELLINEN HARJOITTELU
+    <div class="section-label">
+      TREENI
     </div>
 
     <h2>
@@ -526,46 +493,38 @@
       119 € / kk
     </div>
 
-    <p class="intro">
-      Online treenivalmennus sopii sinulle, kun haluat tavoitteellista
-      ja suunnitelmallista treeniä sekä valmentajan tuen kehityksesi
-      seuraamiseen, mutta et tarvitse erillistä ravinto-ohjelmaa.
+    <p class="intro-text">
+      Treenivalmennus sopii sinulle, kun haluat tavoitteellisen
+      ja juuri sinulle suunnitellun treeniohjelman sekä valmentajan
+      tuen harjoittelusi tueksi.
     </p>
 
-    <p class="intro">
-      Saat henkilökohtaisesti sinulle ja tavoitteidesi mukaan suunnitellun
-      treeniohjelman, jonka etenemistä seuraamme yhdessä viikoittain.
-      Viikkoraportoinnin yhteydessä käymme läpi kuluneen viikon treenit,
-      kehityksen ja mahdolliset haasteet sekä asetamme tavoitteet
-      seuraavalle viikolle.
+    <p class="intro-text">
+      Ohjelmaa ei vain anneta sinulle ja jätetä siihen.
+      Seuraamme treenien etenemistä viikoittain, asetamme yhdessä
+      tavoitteita seuraavalle viikolle ja muokkaamme ohjelmaa
+      kehityksesi mukaan. Näin tiedät, mitä salilla kannattaa tehdä
+      ja mihin juuri nyt kannattaa keskittyä.
     </p>
 
-    <p class="intro">
-      Ohjelma elää kehityksesi mukana. Treeniohjelmaa päivitetään ja
-      muokataan tarpeen mukaan, jotta harjoittelu pysyy nousujohteisena
-      ja tukee tavoitettasi myös pidemmällä aikavälillä.
-    </p>
-
-    <div class="includes-title">
-      VALMENNUKSEEN KUULUU
-    </div>
-
-    <ul class="includes">
-      <li>Henkilökohtaisesti suunniteltu treeniohjelma</li>
+    <ul class="features">
+      <li>Henkilökohtaisesti suunniteltu treeniohjelma tavoitteidesi tueksi</li>
       <li>Valmentajan jatkuva tuki</li>
-      <li>Viikoittainen raportointi ja seuranta</li>
-      <li>Yhteiset tavoitteet jokaiselle uudelle viikolle</li>
-      <li>Treeniohjelman päivitykset ja muutokset tarpeen mukaan</li>
-      <li>Valmennuksen minimikesto 3 kk</li>
+      <li>Viikkoraportointi ja seuranta</li>
+      <li>Treeniohjelman päivitykset ja muutokset</li>
+      <li>3 kuukauden minimisitoutuminen valmennukseen</li>
     </ul>
 
-    <div class="note">
-      Ravinto-ohjelma ei kuulu Online treenivalmennukseen.
-      Jos haluat sekä treenin että ravinnon osaksi valmennustasi,
-      Online kuukausivalmennus on sinulle sopivampi kokonaisuus.
-    </div>
+    <p class="note">
+      Ravinto-ohjelma ei kuulu treenivalmennukseen.
+      Jos haluat yhdistää sekä treenin että ravinnon,
+      Online kuukausivalmennus on sinulle sopivampi vaihtoehto.
+    </p>
 
-    <a class="btn" href="index.html#yhteystiedot">
+    <a
+      class="btn"
+      href="index.html#yhteystiedot"
+    >
       OTA YHTEYTTÄ &nbsp; →
     </a>
 
@@ -574,11 +533,10 @@
 </section>
 
 
-
 <!-- RAVINTOVALMENNUS -->
 
 <section
-  class="coaching-block"
+  class="coaching-section"
   id="ravintovalmennus"
 >
 
@@ -586,7 +544,7 @@
 
   <div class="coaching-content">
 
-    <div class="coaching-number">
+    <div class="section-label">
       RAVINTO
     </div>
 
@@ -598,47 +556,37 @@
       119 € / kk
     </div>
 
-    <p class="intro">
-      Online ravintovalmennus sopii sinulle, kun haluat kehittää
-      ravitsemustasi tavoitteellisesti ja löytää juuri sinulle toimivan
-      tavan syödä, mutta et tarvitse erillistä treeniohjelmaa.
+    <p class="intro-text">
+      Ravintovalmennus sopii sinulle, kun haluat ravitsemuksen
+      tukevan tavoitteitasi ilman tarpeettomia kieltoja tai
+      epärealistisia sääntöjä.
     </p>
 
-    <p class="intro">
-      Saat henkilökohtaisesti sinulle ja tavoitteidesi mukaan suunnitellun
-      ravinto-ohjelman, jonka toteutumista ja etenemistä seuraamme yhdessä
-      viikoittain. Viikkoraportoinnin yhteydessä käymme läpi kuluneen viikon,
-      mahdolliset haasteet ja onnistumiset sekä asetamme yhdessä tavoitteet
-      seuraavalle viikolle.
+    <p class="intro-text">
+      Ravinto-ohjelma suunnitellaan henkilökohtaisesti tavoitteidesi
+      ja arkesi mukaan. Seuraamme etenemistä viikoittain ja teemme
+      tarvittaessa muutoksia ohjelmaan, jotta kokonaisuus toimii
+      myös käytännössä ja tukee pitkäjänteistä kehitystä.
     </p>
 
-    <p class="intro">
-      Ravinto-ohjelma ei ole kiveen hakattu, vaan sitä päivitetään ja
-      muokataan valmennuksen aikana tarpeidesi, kehityksesi ja
-      elämäntilanteesi mukaan. Tarkoituksena on rakentaa toimiva kokonaisuus,
-      joka tukee tavoitteitasi mutta sopii samalla oikeaan elämään.
-    </p>
-
-    <div class="includes-title">
-      VALMENNUKSEEN KUULUU
-    </div>
-
-    <ul class="includes">
+    <ul class="features">
       <li>Henkilökohtaisesti suunniteltu ravinto-ohjelma</li>
       <li>Valmentajan jatkuva tuki</li>
-      <li>Viikoittainen raportointi ja seuranta</li>
-      <li>Yhteiset tavoitteet jokaiselle uudelle viikolle</li>
-      <li>Ravinto-ohjelman päivitykset ja muutokset tarpeen mukaan</li>
-      <li>Valmennuksen minimikesto 3 kk</li>
+      <li>Viikkoraportointi ja seuranta</li>
+      <li>Ravinto-ohjelman päivitykset ja muutokset</li>
+      <li>3 kuukauden minimisitoutuminen valmennukseen</li>
     </ul>
 
-    <div class="note">
-      Treeniohjelma ei kuulu Online ravintovalmennukseen.
-      Jos haluat sekä treenin että ravinnon osaksi valmennustasi,
-      Online kuukausivalmennus on sinulle sopivampi kokonaisuus.
-    </div>
+    <p class="note">
+      Treeniohjelma ei kuulu ravintovalmennukseen.
+      Jos haluat yhdistää sekä ravinnon että tavoitteellisen
+      harjoittelun, Online kuukausivalmennus sisältää molemmat.
+    </p>
 
-    <a class="btn" href="index.html#yhteystiedot">
+    <a
+      class="btn"
+      href="index.html#yhteystiedot"
+    >
       OTA YHTEYTTÄ &nbsp; →
     </a>
 
@@ -647,24 +595,28 @@
 </section>
 
 
+<!-- CTA -->
 
-<section class="bottom-cta">
+<section class="cta">
 
   <div class="section-label">
-    OTA YHTEYTTÄ
+    ETKÖ OLE VARMA MIKÄ SOPII SINULLE?
   </div>
 
   <h2>
-    Etkö ole varma, mikä valmennus sopii sinulle?
+    Autan sinua valitsemaan.
   </h2>
 
   <p>
-    Laita minulle viestiä, niin voidaan yhdessä katsoa,
-    mikä valmennuskokonaisuus tukisi parhaiten juuri sinun
-    tavoitteitasi ja lähtötilannettasi.
+    Jos et ole varma, mikä valmennuksista sopisi parhaiten
+    tavoitteisiisi, laita minulle viestiä.
+    Voimme yhdessä katsoa, mikä vaihtoehto olisi sinulle sopivin.
   </p>
 
-  <a class="btn" href="index.html#yhteystiedot">
+  <a
+    class="btn"
+    href="index.html#yhteystiedot"
+  >
     OTA YHTEYTTÄ &nbsp; →
   </a>
 
@@ -677,4 +629,5 @@
 
 
 </body>
+
 </html>
